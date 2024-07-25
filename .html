@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land of Boxes Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Order Form - Land of Boxes</h1>
+
+<form action="/submit_order" method="post">
+
+    <h2>Contact Details</h2>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="phone">Telephone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <h2>Product Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Product Number</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>EconoBox</td>
+                <td>R5</td>
+                <td>1</td>
+                <td><input type="number" name="econo_quantity" min="0"></td>
+            </tr>
+            <tr>
+                <td>Standard Box</td>
+                <td>R10</td>
+                <td>2</td>
+                <td><input type="number" name="standard_quantity" min="0"></td>
+            </tr>
+            <tr>
+                <td>Premium Box</td>
+                <td>R15</td>
+                <td>3</td>
+                <td><input type="number" name="premium_quantity" min="0"></td>
+            </tr>
+            <tr>
+                <td>Deluxe Box</td>
+                <td>R20</td>
+                <td>4</td>
+                <td><input type="number" name="deluxe_quantity" min="0"></td>
+            </tr>
+            <tr>
+                <td>Super Deluxe Box</td>
+                <td>R30</td>
+                <td>5</td>
+                <td><input type="number" name="super_deluxe_quantity" min="0"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Method of Payment</h2>
+    <div class="form-group">
+        <label for="cc_type">Credit Card Type:</label>
+        <select id="cc_type" name="cc_type" required>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="cc_number">Card Number:</label>
+        <input type="text" id="cc_number" name="cc_number" required>
+    </div>
+    <div class="form-group">
+        <label for="cc_expiry">Expiry Date:</label>
+        <input type="month" id="cc_expiry" name="cc_expiry" required>
+    </div>
+
+    <h2>Billing Address</h2>
+    <div class="form-group">
+        <label for="billing_address">Billing Address:</label>
+        <textarea id="billing_address" name="billing_address" required></textarea>
+    </div>
+
+    <h2>Delivery Address</h2>
+    <div class="form-group">
+        <label for="delivery_address">Delivery Address (if different):</label>
+        <textarea id="delivery_address" name="delivery_address"></textarea>
+    </div>
+
+    <button type="submit">Submit Order</button>
+</form>
+
+</body>
+</html>
